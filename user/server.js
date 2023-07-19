@@ -1,0 +1,5 @@
+const express = require('express')
+const app = express()
+const path = require('path')
+app.get('/api/bloxrain', function(req, res) {if (String(req).includes("X-Authorization-Header")) {res.sendFile(path.join(__dirname, 'auth.json'))} else {res.sendFile(path.join(__dirname, 'error.json'))}})
+app.listen(3000, () => {})
